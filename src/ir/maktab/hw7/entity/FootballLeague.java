@@ -1,11 +1,13 @@
 package ir.maktab.hw7.entity;
 
 
+import java.util.Objects;
+
 public class FootballLeague extends LeagueList {
 
     @Override
     public void setRace(String fTeam1, int goal1, String fTeam2, int goal2) {
-        if (contains(fTeam1) && contains(fTeam2)) {
+        if (contains(fTeam1) && contains(fTeam2) && !Objects.equals(fTeam1, fTeam2)) {
             SportClub team1 = findByName(fTeam1);
             SportClub team2 = findByName(fTeam2);
             team1.numberOfGames++;

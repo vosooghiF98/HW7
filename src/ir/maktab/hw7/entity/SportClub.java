@@ -35,6 +35,7 @@ public class SportClub {
                 ", numberOfGames=" + numberOfGames +
                 ", numberOfWins=" + numberOfWins +
                 ", numberOfLosses=" + numberOfLosses +
+                ", numberOfDraw=" + numberOfDraw +
                 ", score=" + score +
                 '}';
     }
@@ -43,23 +44,12 @@ public class SportClub {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         SportClub sportClub = (SportClub) o;
-
-        if (numberOfGames != sportClub.numberOfGames) return false;
-        if (numberOfWins != sportClub.numberOfWins) return false;
-        if (numberOfLosses != sportClub.numberOfLosses) return false;
-        if (score != sportClub.score) return false;
-        return Objects.equals(clubName, sportClub.clubName);
+        return clubName.equals(sportClub.clubName);
     }
 
     @Override
     public int hashCode() {
-        int result = clubName != null ? clubName.hashCode() : 0;
-        result = 31 * result + numberOfGames;
-        result = 31 * result + numberOfWins;
-        result = 31 * result + numberOfLosses;
-        result = 31 * result + score;
-        return result;
+        return Objects.hash(clubName);
     }
 }
