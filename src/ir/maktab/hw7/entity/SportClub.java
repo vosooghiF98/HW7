@@ -8,7 +8,6 @@ public class SportClub {
     protected int numberOfGames;
     protected int numberOfWins;
     protected int numberOfLosses;
-    protected int numberOfDraw;
     protected int score;
     public SportClub (String clubName){
         this.clubName = clubName;
@@ -27,18 +26,6 @@ public class SportClub {
         this.clubName = clubName;
     }
 
-
-    @Override
-    public String toString() {
-        return "SportClub{" +
-                "clubName='" + clubName + '\'' +
-                ", numberOfGames=" + numberOfGames +
-                ", numberOfWins=" + numberOfWins +
-                ", numberOfLosses=" + numberOfLosses +
-                ", numberOfDraw=" + numberOfDraw +
-                ", score=" + score +
-                '}';
-    }
 
     @Override
     public boolean equals(Object o) {

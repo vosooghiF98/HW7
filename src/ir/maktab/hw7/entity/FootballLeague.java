@@ -18,8 +18,8 @@ public class FootballLeague extends LeagueList {
                     team2.numberOfLosses++;
                     team1.score += 3;
                 } else if (goal1 == goal2) {
-                    team1.numberOfDraw++;
-                    team2.numberOfDraw++;
+                    ((FootballClub)team1).numberOfDraw++;
+                    ((FootballClub)team2).numberOfDraw++;
                     team1.score++;
                     team2.score++;
                 } else {
