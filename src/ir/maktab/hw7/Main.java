@@ -1,6 +1,7 @@
 package ir.maktab.hw7;
 
-import ir.maktab.hw7.menu.Menu;
+import ir.maktab.hw7.menu.FootballMenu;
+import ir.maktab.hw7.menu.VolleyballMenu;
 
 import java.util.Scanner;
 
@@ -25,6 +26,8 @@ public class Main {
         }
     }
     public static void main(String[] args) {
+        FootballMenu footballMenu = new FootballMenu();
+        VolleyballMenu volleyballMenu = new VolleyballMenu();
         System.out.println("Menu :");
         System.out.println("Football league : 1");
         System.out.println("Volleyball league : 2");
@@ -45,14 +48,14 @@ public class Main {
                     System.out.print("Enter club name : ");
                     input.nextLine();
                     String name = input.nextLine();
-                    Menu.addFC(name);
+                    footballMenu.add(name);
                     System.out.println("FC added.");
                 }
                 if (button == 2) {
                     System.out.print("Enter club name : ");
                     input.nextLine();
                     String name = input.nextLine();
-                    Menu.removeFC(name);
+                    footballMenu.remove(name);
                     System.out.println("FC removed.");
                 }
                 if (button == 3) {
@@ -66,16 +69,16 @@ public class Main {
                     String club2 = input.nextLine();
                     System.out.print("Enter number of goal : ");
                     int goal2 = check(0,100);
-                    Menu.setRaceFC(club1, goal1, club2, goal2);
+                    footballMenu.setRace(club1, goal1, club2, goal2);
                 }
                 if (button == 4) {
                     System.out.print("Enter club name : ");
                     input.nextLine();
                     String name = input.nextLine();
-                    Menu.showFC(name);
+                    footballMenu.show(name);
                 }
                 if (button == 5) {
-                    Menu.showAllFC();
+                    footballMenu.showAll();
                 }
             } while (button != 6);
         }
@@ -95,14 +98,14 @@ public class Main {
                     System.out.print("Enter club name : ");
                     input.nextLine();
                     String name = input.nextLine();
-                    Menu.addVC(name);
+                    volleyballMenu.add(name);
                     System.out.println("VC added.");
                 }
                 if (button == 2) {
                     System.out.print("Enter club name : ");
                     input.nextLine();
                     String name = input.nextLine();
-                    Menu.removeVC(name);
+                    volleyballMenu.remove(name);
                     System.out.println("VC removed.");
                 }
                 if (button == 3) {
@@ -116,16 +119,16 @@ public class Main {
                     String club2 = input.nextLine();
                     System.out.print("Enter number of set : ");
                     int set2 = check(0,3);
-                    Menu.setRaceVC(club1, set1, club2, set2);
+                    volleyballMenu.setRace(club1, set1, club2, set2);
                 }
                 if (button == 4) {
                     System.out.print("Enter club name : ");
                     input.nextLine();
                     String name = input.nextLine();
-                    Menu.showVC(name);
+                    volleyballMenu.show(name);
                 }
                 if (button == 5) {
-                    Menu.showAllVC();
+                    volleyballMenu.showAll();
                 }
             } while (button != 6);
         }
